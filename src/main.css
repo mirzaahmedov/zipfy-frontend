@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+html {
+  font-size: 16px;
+  font-family: theme("fontFamily.body");
+  color: theme("colors.gray[950]");
+  background-color: theme("colors.gray[50]");
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+@layer components {
+  .primary-btn {
+    @apply bg-primary disabled:cursor-not-allowed hover:scale-105 transition disabled:bg-gray-500 text-white text-base py-4 md:py-5 px-6 md:px-8 flex items-center gap-2 rounded-full shadow-primary-md;
+  }
+  .icon-btn {
+    @apply inline-block p-2 rounded-full text-xl text-gray-700 hover:ring-2 hover:ring-gray-200 active:bg-gray-100;
+  }
+  .field-label {
+    @apply block font-medium text-gray-700;
+  }
+  .field-input {
+    @apply block w-full bg-white placeholder-gray-400 rounded-2xl py-4 md:py-6 px-6 md:px-8 shadow focus:outline focus:outline-primary focus:ring-4 focus:ring-blue-200;
+  }
+}
